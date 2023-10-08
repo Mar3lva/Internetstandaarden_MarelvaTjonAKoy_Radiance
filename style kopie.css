@@ -1,0 +1,491 @@
+
+/*algemeen*/
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-color: var(--achtergrond) 
+}
+
+img{
+    width: 100%;
+}
+
+h2{
+    color: var(--extra);
+    font-size: 3em;
+    animation: 1.5s ease-out 0s 1 logo-animation;
+}
+
+h3{
+    color: var(--pink);
+    font-size: 2.5em;
+    font-family: sans-serif;
+}
+
+p{
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--text);
+    font-weight: lighter;
+    font-size: 1.3em;
+}
+
+
+/*kleuren*/
+:root{
+    --achtergrond:#ece6df; /*achtergrond kleur*/
+    --text: #272727; /*text kleur*/
+    --extra: #ffffff; /*extra kleur*/
+    --footer: #ff7557; /*footer kleur*/
+    --pink: #ffa49f; /*koppen*/
+}
+
+@media (prefers-color-scheme: dark){
+    :root {
+            --achtergrond: #000000; /*achtergrond kleur*/
+            --text:#ffffff; /*text kleur*/
+            --extra: #000000; /*extra styling kleur*/
+    }
+}
+
+/*nav*/
+nav{
+    background-image: url('foto/gradient.png'); 
+    background-size: cover;
+    width: 100%;
+    height: 100px;
+    border: 1em;
+    text-align: center;
+    padding-top: 1em;
+}
+
+h1{
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        color: var(--extra);
+        font-weight: bold;
+        letter-spacing: 0.3em;
+        font-size: 2em; 
+        border-bottom: 1px solid var(--text);
+}
+
+a{
+    text-decoration: none;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-top: 1.3em;
+    justify-content: center;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    font-size: 1.3em;
+    font-family: sans-serif;
+    font-weight: lighter;
+    color: var(--text);
+    padding: 0 50px;
+}
+
+nav ul li a:hover {
+    color: var(--extra);
+    border-style: solid;
+}
+
+/*footer*/
+footer{
+    text-align: center;  
+    margin: 0;
+    height: 3em;
+    background-image: url('foto/gradient.png'); 
+    background-size: cover;
+    width: 100%;
+    overflow: hidden;
+    height: 100px;
+    padding-top: 0.3em;
+}
+
+footer p:nth-of-type(1){
+    color:var(--extra);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.4em;
+    letter-spacing: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+footer p:nth-of-type(2){
+    margin-bottom: 0.3em;
+}
+
+/************/
+/*homepagina*/
+/************/
+
+/*section 1*/
+.index section:nth-of-type(1){
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text horizontally */
+    position: relative; 
+    aspect-ratio: 16/8; 
+}
+
+.index section:nth-of-type(1) img{
+    position: absolute; /* Position image absolutely */
+    width: 50em; /* Full width */
+    height: 50em; /* Full height */
+    z-index: -1; /* Place the image behind other content */
+    margin-top: 5em;
+}
+
+.index section:nth-of-type(1) h2, .index section:nth-of-type(1) p {
+    position: relative; /* Bring the text content above the image */
+    max-width: 300px;
+    margin-top: 3em; /* Adjust this value as needed to center the text vertically */
+}
+
+.index section:nth-of-type(1) h2 {
+    font-size: 6em;
+    margin-right: 3.4em;
+    letter-spacing: 0.2em;
+    animation: 1.5s ease-out 0s 1 logo-animation;
+}
+
+@keyframes logo-animation{
+    0% {
+            transform: scale(0.8);
+    opacity: 0;
+}
+
+100% {
+            transform: scale(1);
+    opacity: 1;
+    }          
+}
+
+.index section:nth-of-type(1) p {
+    margin-top: 1em; /* Adjust this value as needed to center the text vertically */
+}
+
+/*section2*/
+.index h3{
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.index section:nth-of-type(2){
+    display: flex;
+    align-items: center;
+
+}
+
+.index section:nth-of-type(2) img:nth-of-type(1){
+    width: 12em;
+}
+
+.index section:nth-of-type(2) p{
+    margin-left: 8em;
+    margin-right: 11em;
+    margin-bottom: 6em;
+}
+
+/********/
+/*beauty*/
+/********/
+.beauty div{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 1.5em;
+    justify-content: space-between;
+}
+
+.beauty div img{
+    justify-content: center;
+    width: 30em;
+    height: 30em;
+}
+
+.beauty h2 {
+    color: var(--footer);
+    font-family: sans-serif;
+    font-size: 7em;
+    position: absolute;
+    top: 2.8em;
+    left: 4em;
+    letter-spacing: 0.3em;
+    font-weight: lighter;
+}
+
+/*section1*/
+.beauty section:nth-of-type(1){
+    display: flex;
+    margin-top: 5em; 
+}
+
+.beauty section:nth-of-type(1) img{
+    width: 30em;
+    height: 30em;
+    justify-content: left;
+    margin-left: 20em;
+}
+
+.beauty section:nth-of-type(1) img:hover{
+    animation-name: foto-animatie;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    transition:.5s ease-in-out;
+}
+
+.beauty section:nth-of-type(1) p{
+    margin-left: 2em;
+    margin-top: 2em;
+    margin-right: 10em;
+    margin-bottom: 6em;
+}
+
+/*section2*/
+.beauty h3:nth-of-type(1){
+    margin-left: 1em;
+    margin-top: 2em;
+    margin-right: 16em;
+    margin-bottom: 1.3em;
+}
+
+.beauty section:nth-of-type(2) ul {
+	display: grid;
+	width: 100%;
+	justify-content: start;
+	grid-template-columns: repeat(auto-fit, minmax(6em, 1fr));
+	gap: 1.7em;
+    margin-bottom: 6em;
+}
+
+.beauty section:nth-of-type(2) li {
+	height: auto;
+	grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+	gap: 1em;
+	position: relative;
+	overflow: hidden;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.beauty section:nth-of-type(2) li:nth-last-of-type(2) img{
+    height: 38.5em;
+}
+
+/*transition*/
+.beauty main section:nth-of-type(2) li:hover {
+	transform: scale(1.1);
+	transition: .5s;
+}
+
+.beauty main section:nth-of-type(2) li:hover p {
+    color: var(--extra);
+}
+
+.beauty main section:nth-of-type(2) li {
+	transition: .5s;
+}
+
+/*tekst*/
+.beauty section:nth-of-type(2) ul p {
+	display: flex;
+	justify-content: center;
+	padding-top: 0.4em;
+}
+
+/*video*/
+.beauty h3:nth-of-type(2){
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+video{
+    width: 60em;
+    margin-left: 15em;
+    margin-bottom: 2em;
+}
+
+/********/
+/*Fashion*/
+/********/
+.fashion div{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 1.5em;
+    justify-content: space-between;
+}
+
+.fashion div img{
+    justify-content: center;
+    width: 30em;
+    height: 30em;
+}
+
+.fashion h2 {
+    color: var(--footer);
+    font-family: sans-serif;
+    font-size: 7em;
+    position: absolute;
+    top: 2.8em;
+    left: 4em;
+    letter-spacing: 0.3em;
+    font-weight: lighter;
+}
+
+/*alinea*/
+.fashion section:nth-of-type(1) p:nth-of-type(1){
+    margin-top: 5em;
+    margin-left: 5em;
+    margin-right: 35em;
+    margin-bottom: 5em;
+}
+
+/*qoute*/
+.fashion section:nth-of-type(1) p:nth-of-type(2){
+    font-size: 6em;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: var(--extra);
+    background-color: #ff7557;
+    padding: 1em;
+}
+
+/*srcol fashiontrends*/
+.fashion h3{
+    margin-top: 4em;
+	position: sticky;
+    margin-left: 0.1em;
+    margin-bottom: 0.5em;
+
+}
+
+.fashion article{ 
+    white-space: nowrap;
+    overflow-x: auto;
+    margin-bottom: 4em;
+    margin-left: 1.5em;
+}
+
+.fashion article img{
+    display: inline-block;
+    margin-right: 15px;
+    margin: 0;
+    height: 35em;
+    width: 25em;
+    margin-bottom: 1em;
+}
+
+/***********/
+/*lifestyle*/
+/***********/
+.lifestyle div{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 1.5em;
+    justify-content: space-between;
+}
+
+.lifestyle  div img{
+    justify-content: center;
+    width: 30em;
+    height: 30em;
+}
+
+.lifestyle h2 {
+    color: var(--footer);
+    font-family: sans-serif;
+    font-size: 7em;
+    position: absolute;
+    top: 2.8em;
+    left: 3.2em;
+    letter-spacing: 0.3em;
+    font-weight: lighter;
+}
+.lifestyle p:nth-of-type(1){
+    margin-left: 3em;
+    margin-right: 10em;
+    margin-top: 2em;
+}
+
+/*section1*/
+.lifestyle section:nth-of-type(1){
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 5em
+
+}
+
+.lifestyle section:nth-of-type(1) img{
+    width: 25em;
+}
+
+.lifestyle section:nth-of-type(1) img:hover{
+    animation-name: foto-animatie;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    transition:.5s ease-in-out;
+}
+
+.lifestyle section:nth-of-type(1) p:nth-of-type(1){
+    margin-left: 6em;
+    margin-top: 8.5em;
+}
+
+/*section2*/
+.lifestyle section:nth-of-type(2){
+    display: flex;
+    margin: 5em;
+}
+
+.lifestyle section:nth-of-type(2) img{
+    width: 25em;
+    margin-left: 8em;
+}
+
+.lifestyle section:nth-of-type(2) p:nth-of-type(1){
+    margin-left: 6em;
+    margin-top: 8.5em;
+}
+
+.lifestyle section:nth-of-type(2) img:hover{
+    animation-name: foto-animatie;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    transition:.5s ease-in-out;
+}
+
+@keyframes foto-animatie{
+    0% {
+            transform: rotate(0deg);
+    }
+
+    30% {
+            transform: rotate(20deg);
+    }
+
+    60% {
+            transform: rotate(0deg);
+    }
+
+    80% {
+            transform: rotate(-20deg);
+    }
+
+
+    100% {
+            transform: rotate(0deg);
+    }
+
+}
